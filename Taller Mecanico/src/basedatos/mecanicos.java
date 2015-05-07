@@ -52,10 +52,10 @@ public class mecanicos {
       }
    }
    
-   public void DeleteMecanicos(String rut){  
+   public void DeleteMecanicos(int idMecanicos){  
             try {                
-                PreparedStatement pstm = con.getConnection().prepareStatement("delete from mecanicos where rut = ?");            
-                pstm.setString(1, rut);                   
+                PreparedStatement pstm = con.getConnection().prepareStatement("DELETE FROM mecanicos WHERE IdMecanico = ?");            
+                pstm.setString(1, String.valueOf(idMecanicos));                   
                 pstm.execute();
                 pstm.close();            
             }catch(SQLException e){
@@ -79,25 +79,24 @@ public class mecanicos {
          System.out.println(e);
       }
       
-    Object[][] data = new String[registros][4];  
+    Object[][] data = new String[registros][3];  
     //realizamos la consulta sql y llenamos los datos en "Object"
       try{    
          PreparedStatement pstm = con.getConnection().prepareStatement("SELECT " +
-            " rut, app, nombre, telefono " +
+            " IdMecanico, app, nombre " +
             " FROM mecanicos" +
             " ORDER BY nombre ");
          ResultSet res = pstm.executeQuery();
          int i = 0;
          while(res.next()){
-            String estRut = res.getString("rut");
-            String estApellido = res.getString("app");
+            String estIdMecanico = res.getString("IdMecanico");
+            String estApp = res.getString("app");
             String estNombre = res.getString("nombre");
-            String estTelefono = res.getString("telefono");
 
-            data[i][0] = estRut;            
-            data[i][1] = estApellido;            
+            data[i][0] = estIdMecanico;            
+            data[i][1] = estApp;            
             data[i][2] = estNombre;            
-            data[i][3] = estTelefono;                     
+                       
             i++;
          }
          res.close();
