@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class ConectBD {
     
-  private String bd =   "";    //<-----nombre Base Datos
+  private String bd =   "taller";    //<-----nombre Base Datos
    private String login = "root";//<---- user base de datos
    private String password = "jidokwan";//<----pass bd
    private String url = "jdbc:mysql://localhost:3306/"+bd;// direccion bd 

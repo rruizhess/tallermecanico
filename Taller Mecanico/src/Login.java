@@ -40,9 +40,6 @@ public class Login extends javax.swing.JInternalFrame {
         b_log = new javax.swing.JButton();
         p_pass = new javax.swing.JPasswordField();
 
-        setClosable(true);
-        setIconifiable(true);
-
         jLabel1.setText("Usuario        :");
 
         jLabel2.setFont(new java.awt.Font("Castellar", 1, 14)); // NOI18N
@@ -111,7 +108,7 @@ public class Login extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         String user=b_user.getText();
         String pass=String.valueOf(p_pass.getPassword());
-        if("user".equals(user) && "pass".equals(pass)){
+        if("root".equals(user) && "jidokwan".equals(pass)){
        ConectBD c=new ConectBD(user,pass);
        c.Conectar();
        this.dispose();
