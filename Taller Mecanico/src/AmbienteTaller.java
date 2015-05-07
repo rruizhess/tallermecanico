@@ -1,3 +1,7 @@
+
+import static java.awt.image.ImageObserver.WIDTH;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +19,8 @@ public class AmbienteTaller extends javax.swing.JFrame {
      * Creates new form AmbienteTaller
      */
     Login l=new Login();
+    Automoviles a=new Automoviles();
+    int cont=0;
     public AmbienteTaller() {
         initComponents();
     }
@@ -69,9 +75,32 @@ public class AmbienteTaller extends javax.swing.JFrame {
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconomantencionmenu.jpg"))); // NOI18N
         jMenu2.setText("Mantencion");
         jMenu2.setIconTextGap(10);
+        jMenu2.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu2MenuSelected(evt);
+            }
+        });
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jMenu2MouseEntered(evt);
+            }
+        });
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoautomovil.jpg"))); // NOI18N
         jMenu3.setText("Automoviles");
+        jMenu3.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu3MenuSelected(evt);
+            }
+        });
         jMenu2.add(jMenu3);
 
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconomecanico.jpg"))); // NOI18N
@@ -133,9 +162,45 @@ public class AmbienteTaller extends javax.swing.JFrame {
         // TODO add your handling code here:
         l.remove(l);
         jDesktopPane1.add(l);
-        l.toFront();
+         cont++;  
+        
+        if(cont==1){
+            
+             jDesktopPane1.remove(l);
+        jDesktopPane1.add(l);
         l.setVisible(true);
+        
+        }
+       
     }//GEN-LAST:event_loginMenuSelected
+
+    private void jMenu2MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu2MenuSelected
+        // TODO add your handling code here:
+        
+       
+    }//GEN-LAST:event_jMenu2MenuSelected
+
+    private void jMenu3MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu3MenuSelected
+        // TODO add your handling code here:
+        if(l.isClosed()){
+            a.setVisible(true);
+            
+            
+            
+           
+        }
+        else{
+        JOptionPane.showMessageDialog(rootPane,"PorFavor Logeate", null, WIDTH, null);
+        }
+    }//GEN-LAST:event_jMenu3MenuSelected
+
+    private void jMenu2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseEntered
+        // TODO add your handling code here:
+        if(!l.isClosed()){
+   JOptionPane.showMessageDialog(rootPane,"PorFavor Logeate", null, WIDTH, null);
+        }
+        
+    }//GEN-LAST:event_jMenu2MouseEntered
 
     /**
      * @param args the command line arguments

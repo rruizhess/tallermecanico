@@ -24,6 +24,10 @@
             <Property name="text" type="java.lang.String" value="Mantencion"/>
             <Property name="iconTextGap" type="int" value="10"/>
           </Properties>
+          <Events>
+            <EventHandler event="menuSelected" listener="javax.swing.event.MenuListener" parameters="javax.swing.event.MenuEvent" handler="jMenu2MenuSelected"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenu2MouseEntered"/>
+          </Events>
           <SubComponents>
             <Menu class="javax.swing.JMenu" name="jMenu3">
               <Properties>
@@ -32,6 +36,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Automoviles"/>
               </Properties>
+              <Events>
+                <EventHandler event="menuSelected" listener="javax.swing.event.MenuListener" parameters="javax.swing.event.MenuEvent" handler="jMenu3MenuSelected"/>
+              </Events>
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu4">
               <Properties>
