@@ -26,30 +26,15 @@ public class Repuestos extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        b_newrepuesto = new javax.swing.JButton();
         b_buscarrepuesto = new javax.swing.JButton();
         b_mostrarrepuesto = new javax.swing.JButton();
         l_repuesto = new javax.swing.JLabel();
         j_idrepuesto = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-
-        setClosable(true);
-        setIconifiable(true);
-        setTitle("Respuestos");
-        setPreferredSize(new java.awt.Dimension(889, 482));
-
-        b_buscarrepuesto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa.png"))); // NOI18N
-        b_buscarrepuesto.setText("Buscar");
-        b_buscarrepuesto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b_buscarrepuestoActionPerformed(evt);
-            }
-        });
-
-        b_mostrarrepuesto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconomostrarrepuestos.jpg"))); // NOI18N
-        b_mostrarrepuesto.setText("Mostrar Repuestos");
-
-        l_repuesto.setText("Ingrese Identificacion Repuesto :");
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -64,42 +49,80 @@ public class Repuestos extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        setClosable(true);
+        setIconifiable(true);
+        setTitle("Respuestos");
+        setPreferredSize(new java.awt.Dimension(889, 482));
+
+        b_newrepuesto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoagregarauto.jpg"))); // NOI18N
+        b_newrepuesto.setText("Nuevo Repuesto");
+        b_newrepuesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_newrepuestoActionPerformed(evt);
+            }
+        });
+
+        b_buscarrepuesto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa.png"))); // NOI18N
+        b_buscarrepuesto.setText("Buscar");
+        b_buscarrepuesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_buscarrepuestoActionPerformed(evt);
+            }
+        });
+
+        b_mostrarrepuesto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconomostrarrepuestos.jpg"))); // NOI18N
+        b_mostrarrepuesto.setText("Mostrar Repuestos");
+
+        l_repuesto.setText("Ingrese Identificacion Repuesto :");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 783, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
                         .addComponent(l_repuesto)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(j_idrepuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
+                        .addGap(29, 29, 29)
                         .addComponent(b_buscarrepuesto)
-                        .addGap(64, 64, 64)
-                        .addComponent(b_mostrarrepuesto)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(b_mostrarrepuesto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(b_newrepuesto)))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(b_buscarrepuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(b_mostrarrepuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(l_repuesto)
-                            .addComponent(j_idrepuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(b_buscarrepuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(b_mostrarrepuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(b_newrepuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(l_repuesto)
+                        .addComponent(j_idrepuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         pack();
@@ -109,12 +132,23 @@ public class Repuestos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_b_buscarrepuestoActionPerformed
 
+    private void b_newrepuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_newrepuestoActionPerformed
+        // TODO add your handling code here:
+        NuevoRepuesto r=new NuevoRepuesto();
+        AmbienteTaller.getjDesktopPane().add(r);
+        r.toFront();
+        r.setVisible(true);
+    }//GEN-LAST:event_b_newrepuestoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_buscarrepuesto;
     private javax.swing.JButton b_mostrarrepuesto;
+    private javax.swing.JButton b_newrepuesto;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField j_idrepuesto;
     private javax.swing.JLabel l_repuesto;
     // End of variables declaration//GEN-END:variables

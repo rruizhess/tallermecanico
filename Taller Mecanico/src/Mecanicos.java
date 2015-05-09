@@ -32,6 +32,7 @@ public class Mecanicos extends javax.swing.JInternalFrame {
         jTable1 = new javax.swing.JTable();
         b_buscarmecanico = new javax.swing.JButton();
         b_mostrarmecanicos = new javax.swing.JButton();
+        b_newmecanico = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -64,40 +65,47 @@ public class Mecanicos extends javax.swing.JInternalFrame {
         b_mostrarmecanicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mechanic_icon.jpg"))); // NOI18N
         b_mostrarmecanicos.setText("Mostrar Mecanicos");
 
+        b_newmecanico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoagregarauto.jpg"))); // NOI18N
+        b_newmecanico.setText("Nuevo Mecanico");
+        b_newmecanico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_newmecanicoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 783, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 799, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
                         .addComponent(l_mecanico)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(j_idmecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50)
                         .addComponent(b_buscarmecanico)
-                        .addGap(64, 64, 64)
-                        .addComponent(b_mostrarmecanicos)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(b_mostrarmecanicos)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(b_newmecanico)))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(b_buscarmecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(b_mostrarmecanicos, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(l_mecanico)
-                            .addComponent(j_idmecanico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(b_buscarmecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(b_mostrarmecanicos, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(b_newmecanico, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(l_mecanico)
+                        .addComponent(j_idmecanico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(11, 11, 11)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(35, Short.MAX_VALUE))
         );
@@ -109,10 +117,19 @@ public class Mecanicos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_b_buscarmecanicoActionPerformed
 
+    private void b_newmecanicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_newmecanicoActionPerformed
+        // TODO add your handling code here:
+        NuevoMecanico n=new NuevoMecanico();
+        AmbienteTaller.getjDesktopPane().add(n);
+        n.toFront();
+        n.setVisible(true);
+    }//GEN-LAST:event_b_newmecanicoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_buscarmecanico;
     private javax.swing.JButton b_mostrarmecanicos;
+    private javax.swing.JButton b_newmecanico;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField j_idmecanico;
