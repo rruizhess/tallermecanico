@@ -21,8 +21,8 @@ public class auto {
   /*Añade un nuevo registro*/
    public void NuevoAuto(String patente, String rut, String modelo){
        try {            
-            PreparedStatement pstm = con.getConnection().prepareStatement("INSERT INTO " + 
-                    "auto VALUES(?,?,?)");            
+            PreparedStatement pstm = con.getConnection().prepareStatement("INSERT INTO autos (patente,rut,IdModelo)" + 
+                    "VALUES(?,?,?);");            
             pstm.setString(1, patente);
             pstm.setString(2, rut);
             pstm.setString(3, modelo);                        

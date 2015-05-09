@@ -1,5 +1,6 @@
 
 import static java.awt.image.ImageObserver.WIDTH;
+import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 
 /*
@@ -13,11 +14,17 @@ import javax.swing.JOptionPane;
  *
  * @author Mi PC
  */
+
+
 public class AmbienteTaller extends javax.swing.JFrame {
 
     /**
      * Creates new form AmbienteTaller
      */
+    
+     public static JDesktopPane getjDesktopPane() {
+        return jDesktopPane1;
+    }
     Login l=new Login();
     Automoviles a=new Automoviles();
     Mecanicos m=new Mecanicos();
@@ -212,7 +219,7 @@ public class AmbienteTaller extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jDesktopPane1)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -369,7 +376,7 @@ public class AmbienteTaller extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Mantencionmenu;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    public static javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu login;
     private javax.swing.JMenu menu_automoviles;

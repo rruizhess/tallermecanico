@@ -13,6 +13,7 @@ public class Automoviles extends javax.swing.JInternalFrame {
     /**
      * Creates new form Automoviles
      */
+    
     public Automoviles() {
         initComponents();
     }
@@ -32,6 +33,7 @@ public class Automoviles extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         b_mostrarauto = new javax.swing.JButton();
+        b_newauto = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -69,39 +71,47 @@ public class Automoviles extends javax.swing.JInternalFrame {
         b_mostrarauto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/coche.gif"))); // NOI18N
         b_mostrarauto.setText("Mostrar Automoviles");
 
+        b_newauto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoagregarauto.jpg"))); // NOI18N
+        b_newauto.setText("Nuevo Auto");
+        b_newauto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_newautoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 716, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(l_patente)
                         .addGap(18, 18, 18)
                         .addComponent(j_patente, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(b_buscarauto)
-                        .addGap(62, 62, 62)
-                        .addComponent(b_mostrarauto)))
-                .addContainerGap(112, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(b_buscarauto, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(b_mostrarauto, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(b_newauto)))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(l_patente)
+                    .addComponent(j_patente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(b_buscarauto)
                     .addComponent(b_mostrarauto, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(l_patente)
-                            .addComponent(j_patente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(b_buscarauto))
-                        .addGap(18, 18, 18)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(b_newauto, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
@@ -115,10 +125,19 @@ public class Automoviles extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_b_buscarautoActionPerformed
 
+    private void b_newautoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_newautoActionPerformed
+        // TODO add your handling code here:
+        NuevoAuto a=new NuevoAuto();
+        AmbienteTaller.getjDesktopPane().add(a);
+        a.toFront();
+        a.setVisible(true);
+    }//GEN-LAST:event_b_newautoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_buscarauto;
     private javax.swing.JButton b_mostrarauto;
+    private javax.swing.JButton b_newauto;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField j_patente;
